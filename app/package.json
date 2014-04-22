@@ -1,0 +1,12 @@
+{
+  "name": "sky.pointer",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+  	"connect": "latest",
+  	"body-parser": "latest",
+  	"express": "latest",
+    "socket.io": "latest",
+    "less": "latest"
+  }
+}
