@@ -8,5 +8,9 @@
   	"express": "latest",
     "socket.io": "latest",
     "less": "latest"
+  },
+  "scripts": {
+    "prestart" : "node middleware/less-compiler.js ./less ./public/css",
+    "start": "node app development"
   }
 }
