@@ -7,7 +7,8 @@
 var skyApp = angular.module('skyPointer', [
 	'ngRoute', 
 	'skyControllers',
-	'skyDirectives'
+	'skyDirectives',
+	'skyHelper'
 ]);
 
 skyApp.config(['$routeProvider', 

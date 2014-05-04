@@ -6,13 +6,17 @@
 
 var skyControllers = angular.module('skyControllers', []);
 
-skyControllers.controller('homeController', ['$scope', 
-	function ($scope) {
+skyControllers.controller('homeController', ['$scope', '$stringHelper',
+	function ($scope, $stringHelper) {
 
 		$scope.inputValue = '';
+		$scope.user = 'anonymous';
+		$scope.convertation = [];
 
-		$scope.setViewValue = function (textData) {
-			$scope.inputValue = textDatal
+		$scope.addNewMessage = function (newMessage) {
+			newMessage = $stringHelper.splitTextByLines(newMessage);
+			$scope.convertation.push({ 'sender' : $scope.user, 'text' : newMessage });
+			$scope.inputValue = '';
 		};
 
 	}]);

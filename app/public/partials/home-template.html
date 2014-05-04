@@ -1,9 +1,29 @@
-<div>
+<div id="whole-container" class="container-fluid">
+	<div id="whole-row" class="row">
+		<!-- <div id="friends-list" class="col-md-3">
+			<!--Friend list etc->
+		</div> -->
 
-	<span>{{inputValue}}</span>
-	<div id="text-field-container" class="container-fluid">
-		<div class="row">
-			<textarea id="text-field" ng-model="inputValue" class="col-md-10 col-md-offset-1"></textarea>
+		<div id="right-container" class="col-md-8 col-md-offset-2">
+			<!--Header and conversation-->
+			<div id="header">
+				<h1>Sky Pointer</h1>
+			</div>
+			<div id="conversation-container">
+				<div>
+					<div ng-repeat="message in convertation">
+						<div class="row">
+							<div class="col-md-3">{{message.sender}}</div>
+							<div class="col-md-9">
+								<div ng-repeat="messagePart in message.text track by $index">{{messagePart}}</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="text-field-container">
+				<textarea autofocus my-input-validator id="text-field" ng-model="inputValue" class="col-md-12"></textarea>
+			</div>
 		</div>
 	</div>
 </div>

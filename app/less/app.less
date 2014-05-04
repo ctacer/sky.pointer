@@ -1,9 +1,20 @@
 @color: #007abc;
 
+body, html {
+	height: 100%;
+	position: relative;
+}
+
 .rounded-corners (@radius: 5px) {
   border-radius: @radius;
   -webkit-border-radius: @radius;
   -moz-border-radius: @radius;
+}
+
+.box-sizing (@type: border-box) {
+	box-sizing: @type;
+	-moz-box-sizing: @type;
+	-webkit-sizing: @type;
 }
 
 .box (@width: 100px, @height: 100px) {
@@ -11,15 +22,45 @@
 	height: @height;
 }
 
+#whole-container, #whole-row, #view-container, #right-container {
+	position: relative;
+	height: 100%;
+}
+
+
+#header {
+	position: absolute;
+	padding: auto;
+	h1{
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+}
+
+#conversation-container {
+	padding: 60px 0px 10px 0px;
+	position: relative;
+	height: 80%;
+	.box-sizing();
+	& > div {
+		overflow-x: hidden;
+		overflow-y: auto;
+		height: 100%;
+		box-shadow: 0px -1px 0px 0px rgba(0,0,0,.3);
+	}
+
+}
+
 #text-field-container {
-	position: fixed;
-	bottom: 20px;
+	position: absolute;
+	bottom: 2%;
+	height: 18%;
 	left: 0px;
 	right: 0px;
 
 	#text-field {
 		.rounded-corners(10px);
-		height: 100px;
+		height: 100%;
 		border: 0;
 		outline: 0;
 		resize: none;
